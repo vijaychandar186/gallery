@@ -11,8 +11,3 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
   return <project.Page />;
 }
-
-export async function generateStaticParams() {
-  const { GALLERY_PROJECTS } = await import('@/config/gallery');
-  return GALLERY_PROJECTS.map((p) => ({ slug: p.slug }));
-}
