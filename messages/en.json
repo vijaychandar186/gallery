@@ -1,0 +1,226 @@
+{
+  "personaLab": {
+    "nav": {
+      "quiz": "Quiz",
+      "traits": "Traits",
+      "about": "About"
+    },
+    "quiz": {
+      "title": "OCEAN Personality Quiz",
+      "description": "Rate each dimension from 1 (low) to 8 (high).",
+      "gender": "Gender",
+      "male": "Male",
+      "female": "Female",
+      "age": "Age",
+      "agePlaceholder": "e.g. 21",
+      "submit": "Predict personality",
+      "resultLabel": "Your personality type",
+      "learnMore": "Learn about all five traits →",
+      "yourProfile": "Your OCEAN Profile",
+      "neighborVotes": "Neighbour votes",
+      "neighborVotesDesc": "Out of 7 nearest neighbours",
+      "scatterTitle": "Dataset Explorer",
+      "scatterDesc": "Your position among ~700 labelled examples",
+      "xAxis": "X axis",
+      "yAxis": "Y axis",
+      "youLabel": "You",
+      "fields": {
+        "openness": {
+          "label": "Openness to experience",
+          "hint": "Curiosity, imagination, novelty-seeking"
+        },
+        "neuroticism": {
+          "label": "Emotional volatility",
+          "hint": "Stress sensitivity, mood variability"
+        },
+        "conscientiousness": {
+          "label": "Self-discipline",
+          "hint": "Organisation, reliability, focus"
+        },
+        "agreeableness": {
+          "label": "Cooperativeness",
+          "hint": "Empathy, trust, prosocial behaviour"
+        },
+        "extraversion": {
+          "label": "Social energy",
+          "hint": "Outgoingness, assertiveness, engagement"
+        }
+      }
+    },
+    "traits": {
+      "title": "The Big Five (OCEAN)",
+      "description": "Five broad dimensions that account for most of the variation in human personality, drawn from decades of psychometric research. Each trait is a spectrum, not a binary.",
+      "disclaimer": "Personality research shows these traits are relatively stable across adulthood but not immutable. Life events, deliberate effort, and environment can all shift where you land on each dimension over time. Treat this result as a snapshot, not a verdict.",
+      "distribution": "Type Distribution",
+      "distributionDesc": "Breakdown of personality types across the ~700-person dataset",
+      "ocean": {
+        "openness": {
+          "name": "Openness",
+          "description": "Captures curiosity, creativity, and comfort with novelty. High scorers seek out new experiences — art, ideas, unfamiliar places. Low scorers prefer the familiar and tend toward practical, concrete thinking. Neither end is better; they reflect different ways of engaging with the world."
+        },
+        "conscientiousness": {
+          "name": "Conscientiousness",
+          "description": "Measures self-discipline, organisation, and goal orientation. Highly conscientious people plan ahead, meet deadlines, and think through consequences. Lower scorers are more spontaneous — they adapt quickly but may struggle with sustained effort on long-term tasks."
+        },
+        "extraversion": {
+          "name": "Extraversion",
+          "description": "Reflects how much you draw energy from social interaction. Extraverts feel energised by people and activity; introverts recharge through solitude and reflection. Most people sit somewhere between the two poles rather than at either extreme."
+        },
+        "agreeableness": {
+          "name": "Agreeableness",
+          "description": "Covers cooperativeness, empathy, and trust. Agreeable people value harmony and are quick to support others. Less agreeable individuals are more competitive and direct — useful in negotiations, but sometimes at the cost of social friction."
+        },
+        "neuroticism": {
+          "name": "Neuroticism",
+          "description": "Indicates susceptibility to emotional distress, anxiety, and mood shifts. High neuroticism doesn't mean weakness — it often reflects sensitivity and depth. Low scorers tend toward emotional stability and resilience under pressure."
+        }
+      }
+    },
+    "about": {
+      "title": "How it works",
+      "subtitle": "How the classifier works.",
+      "dataset": {
+        "title": "The dataset",
+        "body": "A curated collection of ~700 labelled examples, each containing gender, age, and self-reported scores across the five OCEAN dimensions. Each row maps to one of five personality labels: Extraverted, Serious, Responsible, Lively, or Dependable."
+      },
+      "knn": {
+        "title": "k-Nearest Neighbours",
+        "body": "When you submit, the app normalises your inputs to a 0–1 scale, then computes the Euclidean distance from your feature vector to every row in the dataset. It picks the k = 7 closest neighbours and returns whichever label appears most often among them. No model weights are stored — the dataset is the model."
+      },
+      "features": {
+        "title": "Feature engineering",
+        "body": "Raw scores are inverted (9 − score) before comparison to align with the scale convention used in the training data. Gender is encoded as a binary variable (0/1). Age is clamped to the 17–28 range that the dataset covers."
+      },
+      "limitations": {
+        "title": "Limitations",
+        "body": "This is a portfolio demonstration, not a clinical tool. KNN is interpretable but sensitive to feature scale and dataset size. The training data skews toward 17–28 year olds, so predictions outside that age range are less reliable. Personality is also genuinely multi-dimensional — reducing it to one label is a simplification by design."
+      }
+    },
+    "results": {
+      "extraverted": {
+        "label": "Extraverted",
+        "tagline": "You thrive in the company of others.",
+        "detail": "Social energy comes naturally to you. You feel most alive when engaging with the world around you — meeting new people, sparking conversations, and leading with confidence. Quiet rooms recharge slowly; loud rooms fill you with purpose."
+      },
+      "serious": {
+        "label": "Serious",
+        "tagline": "You see the world with clear, grounded eyes.",
+        "detail": "You approach life with intention and depth. Vanity holds little appeal — you measure yourself by what you actually accomplish, not how things appear. Others rely on you precisely because you never overpromise."
+      },
+      "responsible": {
+        "label": "Responsible",
+        "tagline": "Your word is your contract.",
+        "detail": "You follow through. Deadlines, commitments, promises — you treat them all as non-negotiable. This reliability makes you invaluable to the people around you. Structure isn't a burden to you; it's how you build trust."
+      },
+      "lively": {
+        "label": "Lively",
+        "tagline": "Enthusiasm is your default state.",
+        "detail": "You bring momentum to everything you touch. New ideas, spontaneous plans, unexpected detours — these are features, not bugs. Your energy is contagious and your curiosity rarely runs dry."
+      },
+      "dependable": {
+        "label": "Dependable",
+        "tagline": "People know you'll show up.",
+        "detail": "Consistency is your superpower. When others are uncertain, you steady the room. Whether at work, with friends, or in a crisis, people turn to you because they know exactly who they'll find — someone solid, honest, and present."
+      }
+    }
+  },
+  "wordleEntropy": {
+    "nav": {
+      "solver": "Solver",
+      "howItWorks": "How It Works"
+    },
+    "solver": {
+      "wordsLeft": "words left",
+      "bitsLeft": "bits left",
+      "guesses": "guesses",
+      "guessHistory": "Guess History",
+      "bitsGained": "−{bits} bits",
+      "remaining": "{n} left",
+      "solvedIn": "Solved in {n}",
+      "exceptional": "Exceptional.",
+      "great": "Great game.",
+      "wellPlayed": "Well played.",
+      "newGame": "New game",
+      "firstGuessTitle": "Enter your first guess",
+      "nextGuessTitle": "Enter next guess",
+      "recommendedFirst": "Recommended first guess:",
+      "placeholder": "Type a 5-letter word…",
+      "clickPattern": "Click each tile to set the pattern you received:",
+      "miss": "miss",
+      "yellow": "yellow",
+      "green": "green",
+      "addGuess": "Add guess",
+      "reset": "Reset",
+      "resetGame": "Reset game",
+      "topStarting": "Top Starting Words by Entropy",
+      "suggestedNext": "Suggested Next Guesses",
+      "rankedBy": "Ranked by expected information gained (bits)",
+      "fromRemaining": "From {n} remaining word",
+      "fromRemainingPlural": "From {n} remaining words",
+      "legendGreen": "Green — correct position",
+      "legendYellow": "Yellow — wrong position",
+      "legendGrey": "Grey — not in word"
+    },
+    "about": {
+      "title": "Information Theory & Wordle",
+      "description": "How entropy-based reasoning finds the optimal guess sequence — adapted from 3Blue1Brown's analysis of Wordle.",
+      "credit": "Algorithm and mathematical framework by Grant Sanderson (3Blue1Brown). This implementation ports the core entropy solver to TypeScript.",
+      "sections": {
+        "entropy": {
+          "title": "Shannon Entropy",
+          "body": "Entropy measures how much uncertainty exists in a distribution. For Wordle, it quantifies how many \"bits\" of information remain about the hidden answer. With 2,309 possible answers and no guesses, there are log₂(2,309) ≈ 11.2 bits of uncertainty — equivalent to needing ~11 yes/no questions to identify any word."
+        },
+        "patterns": {
+          "title": "Pattern Encoding",
+          "body": "Each guess produces a 5-tile feedback pattern where each tile is grey (miss), yellow (misplaced), or green (exact). There are 3⁵ = 243 possible patterns. Each pattern is encoded as a base-3 integer from 0 to 242, making pattern storage and lookup efficient."
+        },
+        "infoGain": {
+          "title": "Expected Information Gain",
+          "body": "For a guess G against remaining words W, the entropy is H(G) = −Σ p(pattern) × log₂ p(pattern), where p(pattern) is the fraction of words producing that pattern. A high-entropy guess creates many equally-sized groups — ideal for eliminating words fast."
+        },
+        "salet": {
+          "title": "Why SALET First?",
+          "body": "SALET scores ~5.87 bits on the first guess — more than any other 5-letter word against the answer distribution. It covers the most common English letters (S, A, L, E, T) in positions where they appear most frequently. On average it solves Wordle in ~3.42 guesses."
+        },
+        "secondGuess": {
+          "title": "Pre-computed Second Guesses",
+          "body": "For SALET (and a few other strong openers), the optimal second guess is pre-computed for all 243 possible first-guess patterns. This lookup, developed through brute-force simulation, gives near-optimal play without any per-session computation for the second move."
+        },
+        "hardMode": {
+          "title": "Hard Mode Considerations",
+          "body": "In hard mode, every subsequent guess must use all revealed information. This constrains the solver to only words consistent with known pattern — sometimes forcing suboptimal information gains when a non-answer word would otherwise partition the remaining set better."
+        }
+      }
+    }
+  },
+  "projects": {
+    "BirdOS": "A desktop OS simulation built with Next.js & TypeScript",
+    "PersonaLab": "OCEAN personality prediction using k-Nearest Neighbours",
+    "WordleEntropy": "Entropy-based Wordle solver — information theory in action"
+  },
+  "nav": {
+    "gallery": "Gallery",
+    "navigation": "Navigation",
+    "projects": "Projects",
+    "home": "Home"
+  },
+  "home": {
+    "title": "Gallery",
+    "subtitle": "A collection of interactive projects and experiments.",
+    "open": "Open"
+  },
+  "infobar": {
+    "title": "Info",
+    "about_label": "About",
+    "about_content": "Gallery is a hub for interactive web experiments. Each project showcases different techniques built with Next.js and TypeScript.",
+    "navigate_label": "Navigate",
+    "navigate_content": "Use the sidebar to switch between projects. Each project lives at its own route.",
+    "shortcuts_label": "Keyboard Shortcuts",
+    "toggle_infobar": "Toggle info panel",
+    "toggle_sidebar": "Toggle sidebar"
+  },
+  "os": {
+    "title": "BirdOS",
+    "description": "A desktop OS simulation built with Next.js & TypeScript."
+  }
+}

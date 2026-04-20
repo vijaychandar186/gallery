@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "oxc.enable": true,
+  "oxc.configPath": ".oxlintrc.json",
+  "prettier.documentSelectors": [
+    "**/*.css",
+    "**/*.json",
+    "**/*.md",
+    "**/*.mdx",
+    "**/*.yaml",
+    "**/*.yml"
+  ]
+}
