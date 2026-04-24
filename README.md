@@ -217,7 +217,7 @@ src/
 
 ## WordleEntropy (`/WordleEntropy`)
 
-Entropy-based Wordle solver running entirely in the browser. Ports the information-theory approach from 3Blue1Brown's analysis to TypeScript — no server, no external calls.
+Entropy-based Wordle solver running entirely in the browser, using an information-theory approach inspired by 3Blue1Brown’s analysis.
 
 ### Features
 
